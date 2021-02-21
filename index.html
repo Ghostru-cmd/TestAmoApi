@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+	<div class="mainDiv">
+		<div class="header">
+			<h1>TEST</h1>
+			<input type="text" class="search" placeholder="Search...">
+		</div>
+		<div class="table">
+			<table class="tableBody">
+				<thead>
+					<tr>
+						<th>Название</th>
+						<th>Статус</th>
+						<th>Отвецтвенный</th>
+						<th>Дата создания</th>
+						<th>Бюджет</th>
+					</tr>
+				</thead>
+				<tbody class="tbody">
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+    <script>
+		(async () => {
+			const responseLeads = await fetch('http://localhost:5000/leads')
+			const leads = await responseLeads.json()
+			console.log(leads)
+			if (leads.length) {
+				leads.forEach(lead => {			
+					let row = document.createElement('tr')
+					row.className = 'row'
+					let name = lead.name
+					let status = lead.status_id
+					let person = lead.responsible_user_id
+					let create = lead.created_at
+					let prise = lead.price
+					row.innerHTML = `<th class="name">${name}</th>
+									<th class="status">${status}</th>
+									<th class="person">${person}</th>
+									<th class="create">${create}</th>
+									<th class="prise">${prise}</th>`
+					document.querySelector('.tbody').appendChild(row)
+				})
+			}
+			
+			const responseContacts = await fetch('http://localhost:5000/contacts')
+			const contacts = await responseContacts.json()
+			console.log(contacts)
+			if (contacts.length) {
+				contacts.forEach(contact => {
+					// console.log(contact.name)										//имя контакта
+					// contact.custom_fields_values.forEach(phoneEmail => {
+					// 	if (phoneEmail.field_name == 'Телефон') {
+					// 		console.log('Телефон: ' + phoneEmail.values[0].value)	//телефон контакта
+					// 	}
+					// 	if (phoneEmail.field_name == 'Email') {
+					// 		console.log('Email: ' + phoneEmail.values[0].value)		//Email контакта
+					// 	}
+					// })
+					// console.log('----------------------')
+				})
+			}
+		
+			const search = document.querySelector('.search')
+			search.oninput = async () => {
+				if (search.value.length >= 3) {
+					const sendQuery = await fetch(`http://localhost:5000/search?query=${search.value}`)
+					const queryLeads = await sendQuery.json()
+					console.log(queryLeads)
+					if (queryLeads) {		
+						document.querySelector('.tbody').innerHTML = ''
+						queryLeads.forEach(lead => {			
+							let row = document.createElement('tr')
+							row.className = 'row'
+							let name = lead.name
+							let status = lead.status_id
+							let person = lead.responsible_user_id
+							let create = lead.created_at
+							let prise = lead.price
+							row.innerHTML = `<th class="name">${name}</th>
+											<th class="status">${status}</th>
+											<th class="person">${person}</th>
+											<th class="create">${create}</th>
+											<th class="prise">${prise}</th>`
+							document.querySelector('.tbody').appendChild(row)
+						})
+					}
+				}
+			}
+		})();
+		// fetch('http://localhost:5000/')
+		// 	.then(response => response.json())
+		// 	.then(json => console.log(json))
+		// 	.then(json => 
+		// 		for (key in json) {
+		// 			console.log(key.name)
+		// 		}
+		// 	)
+    </script>
+</body>
+</html>

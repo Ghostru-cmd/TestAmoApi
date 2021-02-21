@@ -1,0 +1,50 @@
+body{
+    color: rgba(0,0,0,.65);
+    background: #e6e9e8;
+    font-family: sans-serif;
+}
+thead{
+    background: #fafafa;
+    font-size: 16px;
+}
+tbody{
+    background-color: white;
+    font-size: 14px;
+}
+th{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    text-align: left;
+    padding-left: 10px;
+}
+.table{
+    padding-left: 50px;
+}
+.tableBody{
+    padding-left: 50px;
+    border-collapse: collapse;
+}
+.row{
+    border-bottom: 1px;
+}
+.name{
+    width: 400px;
+    height: 50px;
+}
+.status{
+    width: 200px;
+    height: 50px;
+}
+.person{
+    width: 200px;
+    height: 50px;
+}
+.create{
+    width: 200px;
+    height: 50px;
+}
+.prise{
+    width: 200px;
+    height: 50px;
+}
