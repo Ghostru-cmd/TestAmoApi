@@ -27,8 +27,9 @@ const app = express();
 // })
 
 app.get('/leads', async (req, res) => {
-	const responseLeads = await crm.request.get('/api/v4/leads')
+	const responseLeads = await crm.request.get('/api/v4/leads?with=contacts')
     const leads = responseLeads.data._embedded.leads
+	console.log(leads)
 	const jsonLeads = JSON.stringify(leads)
 	res.writeHead(200, {
 		'Access-Control-Allow-Origin': '*'
@@ -46,32 +47,31 @@ app.get('/contacts', async (req, res) => {
 	res.end(jsonContacts)
 })
 
+app.get('/account', async (req, res) => {
+	const responseAccount = await crm.request.get('/api/v4/account')
+	const account = responseAccount.data
+	const jsonAccount = JSON.stringify(account)
+	res.writeHead(200, {
+		'Access-Control-Allow-Origin': '*'
+	})
+	res.end(jsonAccount)
+})
+
 app.get('/search', async (req, res) => {
 	const getParams = req.query['query']
-	if (typeof getParams == 'string'){
-		const responseQueryStr = await crm.request.get(`/api/v4/leads?filter[name]=` + encodeURIComponent(getParams))
-		console.log(responseQueryStr)
-		if (Object.keys(responseQueryStr).length) {
-			const queryLeads = responseQueryStr.data._embedded.leads
-			console.log(queryLeads)
-			const jsonQuery = JSON.stringify(queryLeads)
-			res.writeHead(200, {
-				'Access-Control-Allow-Origin': '*'
-			})
-			res.end(jsonQuery)
-		}
+
+	const responseQuery = await crm.request.get(`/api/v4/leads?query=` + encodeURIComponent(getParams))
+	console.log(responseQuery)
+	if (Object.keys(responseQuery).length) {
+		const queryLeads = responseQuery.data._embedded.leads
+		console.log(queryLeads)
+		const jsonQuery = JSON.stringify(queryLeads)
+		res.writeHead(200, {
+			'Access-Control-Allow-Origin': '*'
+		})
+		res.end(jsonQuery)
 	} else {
-		const responseQuery = await crm.request.get(`/api/v4/leads?query=` + encodeURIComponent(getParams))
-		console.log(responseQuery)
-		if (Object.keys(responseQuery).length) {
-			const queryLeads = responseQuery.data._embedded.leads
-			console.log(queryLeads)
-			const jsonQuery = JSON.stringify(queryLeads)
-			res.writeHead(200, {
-				'Access-Control-Allow-Origin': '*'
-			})
-			res.end(jsonQuery)
-		}
+		console.log('Ответ пуст => ' + getParams)
 	}
 })
 
@@ -84,7 +84,7 @@ const crm = new AmoCRM({
     auth: {
       client_id: 'bb5fe300-2495-429d-afb5-1ffe973b57ca',
       client_secret: 'N2iq5TvQdFnVHh7d900uafxAl4jFltzOy0HSRIBMW6OEeYKvJtCtyt7VXZDhUZO9',
-      redirect_uri: 'https://41a2fdfd2521.ngrok.io',
+      redirect_uri: 'https://581af7f2b301.ngrok.io',
       server: {
         port: 4000
       }

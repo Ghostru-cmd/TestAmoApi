@@ -18,8 +18,37 @@ th{
     text-align: left;
     padding-left: 10px;
 }
+.header{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.headerText{
+    height: 100%;
+    display: inline-block;
+}
+.search{
+    position: relative;
+    float: right;
+    top: 40px;
+    display: inline-block;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    padding: 2px;
+}
+.search:hover{
+    border: 2px solid #7cdff8;
+}
+.searchSvg{
+    position: relative;
+    float: right;
+    top: 40px;
+    padding: 3px;
+    padding-right: 6px;
+    display: inline-block;
+}
 .table{
     padding-left: 50px;
+    border-radius: 5px;
 }
 .tableBody{
     padding-left: 50px;
@@ -28,13 +57,24 @@ th{
 .row{
     border-bottom: 1px;
 }
+.row:hover{
+    background-color: #e5f7ff;
+}
+.rowContact{
+    background-color: #f9f9f9;
+}
 .name{
-    width: 400px;
+    width: 1000px;
     height: 50px;
 }
 .status{
     width: 200px;
     height: 50px;
+    font-size: 10px;
+}
+.span{
+    padding: 6px;
+    border-radius: 3px;
 }
 .person{
     width: 200px;
