@@ -67,6 +67,16 @@ th{
     width: 1000px;
     height: 50px;
 }
+.tags{
+    border-left: 1px solid grey;
+    padding: 1px;
+}
+.tag{
+    background-color: rgb(158 158 158 / 30%);
+    padding: 4px;
+    border-radius: 3px;
+    margin: 2px;
+}
 .status{
     width: 200px;
     height: 50px;
