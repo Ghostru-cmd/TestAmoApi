@@ -35,181 +35,182 @@
     <script>
 
 		(async () => {
-			// const responseLeads = await fetch('http://localhost:5000/leads')
-			// const leads = await responseLeads.json()
-			const leads = [
-									{
-										"id": 1593553,
-										"name": "Запрос тарифов",
-										"price": 14000,
-										"responsible_user_id": 6766063,
-										"group_id": 0,
-										"status_id": 38046913,
-										"pipeline_id": 3998857,
-										"loss_reason_id": null,
-										"created_by": 6766063,
-										"updated_by": 6766063,
-										"created_at": 1613652307,
-										"updated_at": 1614165418,
-										"closed_at": null,
-										"closest_task_at": null,
-										"is_deleted": false,
-										"custom_fields_values": null,
-										"score": null,
-										"account_id": 29305399,
-										"_links": {
-											"self": {
-												"href": "https://tulevand.amocrm.ru/api/v4/leads/1593553"
-											}
-										},
-										"_embedded": {
-											"tags": [
-												{
-													"id": 29417,
-													"name": "test tag"
-												},
-												{
-													"id": 29418,
-													"name": "test"
-												}
-											],
-											"companies": []
-										}
-									},
-									{
-										id: 1593595,
-										name: 'Рекламная продукция',
-										price: 11000,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046913,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652354,
-										updated_at: 1613652354,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									},
-									{
-										id: 1593637,
-										name: 'Настройка аккаунта',
-										price: 350000,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046913,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652416,
-										updated_at: 1613652416,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									},
-									{
-										id: 1593735,
-										name: 'Запрос тарифов',
-										price: 356000,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046913,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652517,
-										updated_at: 1613652517,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									},
-									{
-										id: 1593813,
-										name: 'Продвижение',
-										price: 325678,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046913,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652621,
-										updated_at: 1613652621,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									},
-									{
-										id: 1593885,
-										name: 'Подключение сервиса',
-										price: 564648,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046916,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652711,
-										updated_at: 1613652725,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									},
-									{
-										id: 1593943,
-										name: 'Продвижение',
-										price: 1000000,
-										responsible_user_id: 6766063,
-										group_id: 0,
-										status_id: 38046919,
-										pipeline_id: 3998857,
-										loss_reason_id: null,
-										created_by: 6766063,
-										updated_by: 6766063,
-										created_at: 1613652777,
-										updated_at: 1613652780,
-										closed_at: null,
-										closest_task_at: null,
-										is_deleted: false,
-										custom_fields_values: null,
-										score: null,
-										account_id: 29305399,
-										_links: { self: [Object] },
-										_embedded: { tags: [], companies: [] }
-									}
-								]
-			
+			const responseLeads = await fetch('http://localhost:5000/leads')
+			const leads = await responseLeads.json()
+			{
+			// const leads = [
+			// 						{
+			// 							"id": 1593553,
+			// 							"name": "Запрос тарифов",
+			// 							"price": 14000,
+			// 							"responsible_user_id": 6766063,
+			// 							"group_id": 0,
+			// 							"status_id": 38046913,
+			// 							"pipeline_id": 3998857,
+			// 							"loss_reason_id": null,
+			// 							"created_by": 6766063,
+			// 							"updated_by": 6766063,
+			// 							"created_at": 1613652307,
+			// 							"updated_at": 1614165418,
+			// 							"closed_at": null,
+			// 							"closest_task_at": null,
+			// 							"is_deleted": false,
+			// 							"custom_fields_values": null,
+			// 							"score": null,
+			// 							"account_id": 29305399,
+			// 							"_links": {
+			// 								"self": {
+			// 									"href": "https://tulevand.amocrm.ru/api/v4/leads/1593553"
+			// 								}
+			// 							},
+			// 							"_embedded": {
+			// 								"tags": [
+			// 									{
+			// 										"id": 29417,
+			// 										"name": "test tag"
+			// 									},
+			// 									{
+			// 										"id": 29418,
+			// 										"name": "test"
+			// 									}
+			// 								],
+			// 								"companies": []
+			// 							}
+			// 						},
+			// 						{
+			// 							id: 1593595,
+			// 							name: 'Рекламная продукция',
+			// 							price: 11000,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046913,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652354,
+			// 							updated_at: 1613652354,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						},
+			// 						{
+			// 							id: 1593637,
+			// 							name: 'Настройка аккаунта',
+			// 							price: 350000,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046913,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652416,
+			// 							updated_at: 1613652416,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						},
+			// 						{
+			// 							id: 1593735,
+			// 							name: 'Запрос тарифов',
+			// 							price: 356000,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046913,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652517,
+			// 							updated_at: 1613652517,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						},
+			// 						{
+			// 							id: 1593813,
+			// 							name: 'Продвижение',
+			// 							price: 325678,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046913,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652621,
+			// 							updated_at: 1613652621,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						},
+			// 						{
+			// 							id: 1593885,
+			// 							name: 'Подключение сервиса',
+			// 							price: 564648,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046916,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652711,
+			// 							updated_at: 1613652725,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						},
+			// 						{
+			// 							id: 1593943,
+			// 							name: 'Продвижение',
+			// 							price: 1000000,
+			// 							responsible_user_id: 6766063,
+			// 							group_id: 0,
+			// 							status_id: 38046919,
+			// 							pipeline_id: 3998857,
+			// 							loss_reason_id: null,
+			// 							created_by: 6766063,
+			// 							updated_by: 6766063,
+			// 							created_at: 1613652777,
+			// 							updated_at: 1613652780,
+			// 							closed_at: null,
+			// 							closest_task_at: null,
+			// 							is_deleted: false,
+			// 							custom_fields_values: null,
+			// 							score: null,
+			// 							account_id: 29305399,
+			// 							_links: { self: [Object] },
+			// 							_embedded: { tags: [], companies: [] }
+			// 						}
+			// 					]
+			}
 			if (leads.length) {
 				leads.forEach((lead, i) => {			
 					let row = document.createElement('tr')
