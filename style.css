@@ -69,7 +69,8 @@ th{
 }
 .tags{
     border-left: 1px solid grey;
-    padding: 1px;
+    padding: 2px;
+    margin: 1em;
 }
 .tag{
     background-color: rgb(158 158 158 / 30%);

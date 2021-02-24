@@ -75,6 +75,16 @@ app.get('/search', async (req, res) => {
 	}
 })
 
+app.get('/pipelines', async (req, res) => {
+	const responsePipelines = await crm.request.get('/api/v4/leads/pipelines')
+	const pipelinesStatuses = responsePipelines.data._embedded.pipelines[0]._embedded.statuses
+	const jsonStatuses = JSON.stringify(pipelinesStatuses)
+	res.writeHead(200, {
+		'Access-Control-Allow-Origin': '*'
+	})
+	res.end(jsonStatuses)
+})
+
 app.listen(5000, () => {
 	console.log('Server started')
 })
@@ -84,7 +94,7 @@ const crm = new AmoCRM({
     auth: {
       client_id: 'bb5fe300-2495-429d-afb5-1ffe973b57ca',
       client_secret: 'N2iq5TvQdFnVHh7d900uafxAl4jFltzOy0HSRIBMW6OEeYKvJtCtyt7VXZDhUZO9',
-      redirect_uri: 'https://581af7f2b301.ngrok.io',
+      redirect_uri: 'https://6800b97f6738.ngrok.io',
       server: {
         port: 4000
       }
