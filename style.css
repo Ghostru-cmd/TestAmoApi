@@ -34,6 +34,7 @@ th{
     border: 2px solid #cccccc;
     border-radius: 4px;
     padding: 2px;
+    margin-right: 50px;
 }
 .search:hover{
     border: 2px solid #7cdff8;
@@ -48,10 +49,12 @@ th{
 }
 .table{
     padding-left: 50px;
+    padding-right: 50px;
     border-radius: 5px;
 }
 .tableBody{
     padding-left: 50px;
+    padding-right: 50px;
     border-collapse: collapse;
 }
 .row{
