@@ -66,9 +66,9 @@ const crm = new AmoCRM({
     auth: {
       client_id: 'bb5fe300-2495-429d-afb5-1ffe973b57ca',
       client_secret: 'N2iq5TvQdFnVHh7d900uafxAl4jFltzOy0HSRIBMW6OEeYKvJtCtyt7VXZDhUZO9',
-      redirect_uri: 'https://5203f049dc6d.ngrok.io',
+      redirect_uri: 'https://82426e6561b7.ngrok.io',
       server: {
-        port: 8080
+        port: 4000
       }
     },
 });
