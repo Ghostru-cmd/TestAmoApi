@@ -28,11 +28,6 @@ function drawLeads(leads, statuses, users) {
             let status = statuses.find(status => status.id == lead.status_id)
 
             let person = shortName(users.find(user => user.id == lead.responsible_user_id).name)
-            // let person = shortName(users.map((user) => {
-            //     if (user.id == lead.responsible_user_id) {
-            //         return user.name
-            //     }
-            // })[0])
 
             let create = getDay(new Date(lead.created_at * 1000))
             
