@@ -13,7 +13,7 @@ function drawContacts(contacts) {
                             <th class="person"></th>
                             <th class="create"></th>
                             <th class="prise"></th>`
-            
+
             document.querySelectorAll('.row')[i].after(rowContact)
         })
         
